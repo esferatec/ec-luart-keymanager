@@ -45,15 +45,17 @@ The code above initializes a new instance of the key manager. It returns the new
 ## Method - add
 
 ```lua
-KeyManager:add(widget, key) -> none
+KeyManager:add(widget: object, key: string) -> none
 ```
 
 This function allows the addition of a widget with a specific key to the KeyManager. It takes two parameters: widget (object) and key (string). It first validates the widget and key to ensure they meet the required criteria. If both the widget and key are valid, the function adds the widget to the self.children table with the specified key.
 
+The full list of Windows virtual keys is available [here](https://learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes).
+
 ## Method - apply
 
 ```lua
-KeyManager:apply(key) -> none
+KeyManager:apply(key: string) -> none
 ```
 
 This function, named apply, processes the key input and performs specific actions accordingly. The apply function in the KeyManager class takes a key parameter, validates it, processes modifier keys, constructs the gesture, and triggers the associated event if applicable.
