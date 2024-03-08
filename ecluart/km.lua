@@ -74,7 +74,7 @@ function KeyManager:apply(key)
   end
 
   if self.children[gesture] ~= nil and (isFunction(self.children[gesture].onClick)) then
-      self.children[gesture]:onClick()
+    self.children[gesture]:onClick()
   end
 
   self.modifier = nil
