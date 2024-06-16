@@ -31,6 +31,12 @@ local function isFunction(parameter)
   return type(parameter) == "function"
 end
 
+-- Checks if the parameter is a nil type.
+-- isNil(parameter: any) -> boolean
+local function isNil(parameter)
+  return type(parameter) == "nil"
+end
+
 -- Defines the key manager object.
 local KeyManager = Object({})
 
@@ -74,7 +80,7 @@ function KeyManager:apply(key)
   end
 
   local child = self.children[gesture]
-  if child and isFunction(child.onClick) and child.enabled then
+  if not isNil(child) and isFunction(child.onClick) and child.enabled then
     child:onClick()
   end
 
